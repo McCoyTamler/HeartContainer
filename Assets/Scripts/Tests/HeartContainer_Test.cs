@@ -8,9 +8,8 @@ using System;
 [TestFixture]
 public class HeartContainer_Test
 {
-    [TestCase(1, 1)]
+    [TestCase(1, 4)]
     [TestCase(4, 4)]
-    [TestCase(5, 4)]
     [TestCase(544, 4)]
     public void test_AddHealthToHeartContainer(int healthToAdd, int correctFillAmount)
     {
@@ -20,8 +19,9 @@ public class HeartContainer_Test
         Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
     }
 
-    [TestCase(1, 0)]
+    [TestCase(1, 3)]
     [TestCase(4, 0)]
+    [TestCase(55, 0)]
     public void test_subtractHealthToHeartContainer(int healthToSubtract, int correctFillAmount)
     {
         HeartContainer heartContainer = new HeartContainer();
@@ -30,21 +30,11 @@ public class HeartContainer_Test
         Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
     }
 
-    [TestCase(1, 0)]
-    [TestCase(4, 0)]
-    public void test_setHealthToHeartContainer(int value, int correctFillAmount)
-    {
-        HeartContainer heartContainer = new HeartContainer();
-
-        heartContainer.SetHealth(value);
-        Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
-    }
-
 }
 
 internal class HeartContainer
 {
-    public int CurrentContainerFill;
+    public int CurrentContainerFill = 4;
 
 
     internal void AddHealth(int addedHealth)
@@ -73,8 +63,4 @@ internal class HeartContainer
 
     }
 
-    internal void SetHealth(int value)
-    {
-        throw new NotImplementedException();
-    }
 }
