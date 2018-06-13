@@ -1,10 +1,11 @@
-﻿<Properties StartupConfiguration="{0268FE17-C82C-6BDF-175C-470D7B878714}|">
+﻿<Properties StartupConfiguration="{C0F41D19-64B2-D4A0-8504-5DAB2CA3D523}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tests/HeartContainer_Test.cs">
     <Files>
-      <File FileName="Assets/Scripts/Tests/HeartContainer_Test.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Tests/HeartContainer_Test.cs" Line="12" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tests PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

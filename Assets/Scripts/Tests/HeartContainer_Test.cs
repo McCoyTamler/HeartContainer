@@ -8,28 +8,33 @@ using System;
 [TestFixture]
 public class HeartContainer_Test
 {
-    [TestCase(1, 4)]
-    [TestCase(4, 4)]
-    [TestCase(544, 4)]
-    public void test_AddHealthToHeartContainer(int healthToAdd, int correctFillAmount)
+    private class Test_AddHealth
     {
-        HeartContainer heartContainer = new HeartContainer();
+        [TestCase(1, 4)]
+        [TestCase(4, 4)]
+        [TestCase(544, 4)]
+        public void test_AddHealthToHeartContainer(int healthToAdd, int correctFillAmount)
+        {
+            HeartContainer heartContainer = new HeartContainer();
 
-        heartContainer.AddHealth(healthToAdd);
-        Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+            heartContainer.AddHealth(healthToAdd);
+            Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+        }
     }
 
-    [TestCase(1, 3)]
-    [TestCase(4, 0)]
-    [TestCase(55, 0)]
-    public void test_subtractHealthToHeartContainer(int healthToSubtract, int correctFillAmount)
+    private class Test_SubtractHealth
     {
-        HeartContainer heartContainer = new HeartContainer();
+        [TestCase(1, 3)]
+        [TestCase(4, 0)]
+        [TestCase(55, 0)]
+        public void test_subtractHealthToHeartContainer(int healthToSubtract, int correctFillAmount)
+        {
+            HeartContainer heartContainer = new HeartContainer();
 
-        heartContainer.SubtractHealth(healthToSubtract);
-        Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+            heartContainer.SubtractHealth(healthToSubtract);
+            Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+        }
     }
-
 }
 
 internal class HeartContainer
