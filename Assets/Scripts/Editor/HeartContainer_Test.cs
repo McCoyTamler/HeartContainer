@@ -5,10 +5,10 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System;
 
-[TestFixture]
+//[TestFixture]
 public class HeartContainer_Test
 {
-    private class Test_AddHealth
+    public class Test_AddHealth
     {
         [TestCase(1, 4)]
         [TestCase(4, 4)]
@@ -22,7 +22,7 @@ public class HeartContainer_Test
         }
     }
 
-    private class Test_SubtractHealth
+    public class Test_SubtractHealth
     {
         [TestCase(1, 3)]
         [TestCase(4, 0)]
@@ -37,35 +37,35 @@ public class HeartContainer_Test
     }
 }
 
-internal class HeartContainer
-{
-    public int CurrentContainerFill = 4;
+//internal class HeartContainer
+//{
+//    public int CurrentContainerFill = 4;
 
 
-    internal void AddHealth(int addedHealth)
-    {
-        if (addedHealth + this.CurrentContainerFill > 4)
-        {
-            this.CurrentContainerFill = 4;
-        }
-        else
-        {
-            this.CurrentContainerFill += addedHealth;
-        }
+//    internal void AddHealth(int addedHealth)
+//    {
+//        if (addedHealth + this.CurrentContainerFill > 4)
+//        {
+//            this.CurrentContainerFill = 4;
+//        }
+//        else
+//        {
+//            this.CurrentContainerFill += addedHealth;
+//        }
 
-    }
+//    }
 
-    internal void SubtractHealth(int subtractedHealth)
-    {
-        if (this.CurrentContainerFill - subtractedHealth < 0)
-        {
-            this.CurrentContainerFill = 0;
-        }
-        else
-        {
-            this.CurrentContainerFill -= subtractedHealth;
-        }
+//    internal void SubtractHealth(int subtractedHealth)
+//    {
+//        if (this.CurrentContainerFill - subtractedHealth < 0)
+//        {
+//            this.CurrentContainerFill = 0;
+//        }
+//        else
+//        {
+//            this.CurrentContainerFill -= subtractedHealth;
+//        }
 
-    }
+//    }
 
-}
+//}
