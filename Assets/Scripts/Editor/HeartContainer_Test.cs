@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System;
@@ -15,10 +16,11 @@ public class HeartContainer_Test
         [TestCase(544, 4)]
         public void test_AddHealthToHeartContainer(int healthToAdd, int correctFillAmount)
         {
-            HeartContainer heartContainer = new HeartContainer();
+            Image image = new GameObject().AddComponent<Image>();
+            HeartContainer heartContainer = new HeartContainer(image);
 
             heartContainer.AddHealth(healthToAdd);
-            Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+            Assert.AreEqual(correctFillAmount, heartContainer.CurrentContainerFill);
         }
     }
 
@@ -29,10 +31,11 @@ public class HeartContainer_Test
         [TestCase(55, 0)]
         public void test_subtractHealthToHeartContainer(int healthToSubtract, int correctFillAmount)
         {
-            HeartContainer heartContainer = new HeartContainer();
+            Image image = new GameObject().AddComponent<Image>();
+            HeartContainer heartContainer = new HeartContainer(image);
 
             heartContainer.SubtractHealth(healthToSubtract);
-            Assert.AreEqual(heartContainer.CurrentContainerFill, correctFillAmount);
+            Assert.AreEqual(correctFillAmount, heartContainer.CurrentContainerFill);
         }
     }
 }

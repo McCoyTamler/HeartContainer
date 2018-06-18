@@ -1,34 +1,51 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HeartContainer
 {
-    public int CurrentContainerFill = 4;
+    private Image _image;
+    private int _currentContainerFill = 4;
+    private float _fillAmountPerHealth = .25f;
 
+    public int CurrentContainerFill
+    {
+        set 
+        {
+            if (value * _fillAmountPerHealth > 1)
+            {
+                _image.fillAmount = 1.0f;
+                _currentContainerFill = 4;
+            }
+            else if (value * _fillAmountPerHealth < 0)
+            {
+                _image.fillAmount = 0f;
+                _currentContainerFill = 0;
+            }
+            else
+            {
+                _image.fillAmount = (float)(value * _fillAmountPerHealth);
+                _currentContainerFill = value;
+            }
+        }
+        get 
+        {
+            return _currentContainerFill;
+        }
+    }
+
+    public HeartContainer(Image image)
+    {
+        _image = image;
+    } 
 
     public void AddHealth(int addedHealth)
     {
-        if (addedHealth + this.CurrentContainerFill > 4)
-        {
-            this.CurrentContainerFill = 4;
-        }
-        else
-        {
-            this.CurrentContainerFill += addedHealth;
-        }
-
+        this.CurrentContainerFill += addedHealth;
     }
 
     public void SubtractHealth(int subtractedHealth)
     {
-        if (this.CurrentContainerFill - subtractedHealth < 0)
-        {
-            this.CurrentContainerFill = 0;
-        }
-        else
-        {
-            this.CurrentContainerFill -= subtractedHealth;
-        }
-
+        this.CurrentContainerFill -= subtractedHealth;
     }
 
 }
