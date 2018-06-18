@@ -39,36 +39,3 @@ public class HeartContainer_Test
         }
     }
 }
-
-//internal class HeartContainer
-//{
-//    public int CurrentContainerFill = 4;
-
-
-//    internal void AddHealth(int addedHealth)
-//    {
-//        if (addedHealth + this.CurrentContainerFill > 4)
-//        {
-//            this.CurrentContainerFill = 4;
-//        }
-//        else
-//        {
-//            this.CurrentContainerFill += addedHealth;
-//        }
-
-//    }
-
-//    internal void SubtractHealth(int subtractedHealth)
-//    {
-//        if (this.CurrentContainerFill - subtractedHealth < 0)
-//        {
-//            this.CurrentContainerFill = 0;
-//        }
-//        else
-//        {
-//            this.CurrentContainerFill -= subtractedHealth;
-//        }
-
-//    }
-
-//}

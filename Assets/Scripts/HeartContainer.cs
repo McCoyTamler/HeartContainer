@@ -5,7 +5,9 @@ public class HeartContainer
 {
     private Image _image;
     private int _currentContainerFill = 4;
-    private float _fillAmountPerHealth = .25f;
+
+    private static int _heartPiecesPerContainer = 4;
+    private float _fillAmountPerHealth = 1.0f /_heartPiecesPerContainer;
 
     public int CurrentContainerFill
     {
